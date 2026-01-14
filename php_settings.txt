@@ -1,0 +1,27 @@
+============================================================
+  PHP 설정 가이드 (XAMPP php.ini)
+============================================================
+
+XAMPP의 php.ini 파일을 수정하세요:
+경로: D:\xamp\php\php.ini (또는 C:\xampp\php\php.ini)
+
+[ 수정해야 할 설정 ]
+
+1. 실행 시간 제한 (AI 처리에 시간 필요)
+   max_execution_time = 300
+
+2. 메모리 제한
+   memory_limit = 512M
+
+3. 파일 업로드 크기
+   upload_max_filesize = 50M
+   post_max_size = 50M
+
+4. 입력 시간 제한
+   max_input_time = 300
+
+[ 수정 후 ]
+- XAMPP Control Panel에서 Apache 재시작
+- 또는 "Stop" 후 "Start" 클릭
+
+============================================================

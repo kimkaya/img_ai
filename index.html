@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMG AI - 카툰/애니메이션 변환</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>IMG AI Studio</h1>
+            <p>사진을 카툰 & 애니메이션 스타일로 변환</p>
+        </header>
+
+        <main>
+            <!-- 카메라/업로드 섹션 -->
+            <section class="input-section">
+                <div class="camera-container">
+                    <video id="camera" autoplay playsinline></video>
+                    <canvas id="snapshot" style="display:none;"></canvas>
+                    <img id="preview" style="display:none;" alt="미리보기">
+                </div>
+
+                <div class="controls">
+                    <button id="btn-camera" class="btn btn-primary">
+                        <span class="icon">📷</span> 카메라 시작
+                    </button>
+                    <button id="btn-capture" class="btn btn-success" disabled>
+                        <span class="icon">📸</span> 촬영
+                    </button>
+                    <label class="btn btn-secondary">
+                        <span class="icon">📁</span> 파일 선택
+                        <input type="file" id="file-input" accept="image/*" hidden>
+                    </label>
+                </div>
+            </section>
+
+            <!-- 스타일 선택 섹션 -->
+            <section class="style-section">
+                <h2>스타일 선택</h2>
+                <div class="style-grid">
+                    <label class="style-option">
+                        <input type="radio" name="style" value="anime" checked>
+                        <div class="style-card">
+                            <div class="style-preview anime"></div>
+                            <span>애니메이션</span>
+                        </div>
+                    </label>
+                    <label class="style-option">
+                        <input type="radio" name="style" value="cartoon">
+                        <div class="style-card">
+                            <div class="style-preview cartoon"></div>
+                            <span>카툰</span>
+                        </div>
+                    </label>
+                    <label class="style-option">
+                        <input type="radio" name="style" value="ghibli">
+                        <div class="style-card">
+                            <div class="style-preview ghibli"></div>
+                            <span>지브리</span>
+                        </div>
+                    </label>
+                    <label class="style-option">
+                        <input type="radio" name="style" value="comic">
+                        <div class="style-card">
+                            <div class="style-preview comic"></div>
+                            <span>코믹북</span>
+                        </div>
+                    </label>
+                </div>
+
+                <!-- 고급 설정 -->
+                <div class="advanced-settings">
+                    <h3>고급 설정</h3>
+                    <div class="setting-row">
+                        <label>변환 강도:</label>
+                        <input type="range" id="strength" min="0.3" max="1.0" step="0.05" value="0.75">
+                        <span id="strength-value">0.75</span>
+                    </div>
+                    <div class="setting-row">
+                        <label>프롬프트 (선택):</label>
+                        <input type="text" id="prompt" placeholder="예: masterpiece, best quality, detailed face">
+                    </div>
+                </div>
+
+                <button id="btn-generate" class="btn btn-generate" disabled>
+                    <span class="icon">🎨</span> AI 변환 시작
+                </button>
+            </section>
+
+            <!-- 결과 섹션 -->
+            <section class="result-section" style="display:none;">
+                <h2>변환 결과</h2>
+                <div class="result-container">
+                    <div class="comparison">
+                        <div class="image-box">
+                            <h3>원본</h3>
+                            <img id="original-result" alt="원본">
+                        </div>
+                        <div class="image-box">
+                            <h3>AI 변환</h3>
+                            <img id="generated-result" alt="변환 결과">
+                        </div>
+                    </div>
+                    <div class="result-actions">
+                        <button id="btn-download" class="btn btn-primary">
+                            <span class="icon">💾</span> 다운로드
+                        </button>
+                        <button id="btn-retry" class="btn btn-secondary">
+                            <span class="icon">🔄</span> 다시 생성
+                        </button>
+                        <button id="btn-new" class="btn btn-secondary">
+                            <span class="icon">➕</span> 새 이미지
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 갤러리 섹션 -->
+            <section class="gallery-section">
+                <h2>갤러리 <button id="btn-refresh-gallery" class="btn-small">🔄</button></h2>
+                <div id="gallery" class="gallery-grid">
+                    <!-- 동적으로 로드됨 -->
+                </div>
+            </section>
+        </main>
+
+        <!-- 로딩 오버레이 -->
+        <div id="loading-overlay" class="loading-overlay" style="display:none;">
+            <div class="loading-content">
+                <div class="spinner"></div>
+                <p id="loading-text">AI가 열심히 그리는 중...</p>
+                <div class="progress-bar">
+                    <div id="progress" class="progress"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 상태 표시 -->
+        <div id="status-bar" class="status-bar">
+            <span id="gpu-status">GPU: 확인 중...</span>
+            <span id="model-status">모델: 확인 중...</span>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
