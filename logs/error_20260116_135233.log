@@ -1,0 +1,29 @@
+Command: py -3.11 "D:\xamp\htdocs\img_ai\php/../python/generate.py" --input "D:\xamp\htdocs\img_ai\php/../uploads/img_20260116_135150_696a346608bd3.JPG" --output "D:\xamp\htdocs\img_ai\php/../outputs/gen_img_20260116_135150_696a346608bd3_anime.png" --style "anime" --strength 0.300000 --prompt "anime style, anime artwork, vibrant colors, detailed anime illustration, high quality anime art" 2>&1
+Output: PROGRESS:5
+STATUS:Initializing...
+PROGRESS:10
+STATUS:Loading AI libraries...
+C:\Users\bjzaa\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\amp\autocast_mode.py:265: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+  warnings.warn(
+PROGRESS:15
+STATUS:Setting up GPU...
+GPU: privateuseone:0
+PROGRESS:20
+STATUS:Loading AI model...
+PROGRESS:25
+STATUS:Loading: cagliostrolab/animagine-xl-3.1
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]`torch_dtype` is deprecated! Use `dtype` instead!
+Loading pipeline components...:  14%|#4        | 1/7 [00:00<00:01,  5.59it/s]Loading pipeline components...:  43%|####2     | 3/7 [00:01<00:01,  2.80it/s]Loading pipeline components...:  57%|#####7    | 4/7 [00:09<00:10,  3.33s/it]Loading pipeline components...:  71%|#######1  | 5/7 [00:10<00:04,  2.26s/it]Loading pipeline components...: 100%|##########| 7/7 [00:10<00:00,  1.31s/it]Loading pipeline components...: 100%|##########| 7/7 [00:10<00:00,  1.53s/it]
+PROGRESS:50
+STATUS:Model ready
+PROGRESS:55
+STATUS:Processing image...
+Image: 1024x768
+PROGRESS:60
+STATUS:Generating artwork...
+Style: anime
+Strength: 0.3
+ERROR: Generation failed: Could not allocate tensor with 402653184 bytes. There is not enough GPU video memory available!
+
+Error: 
+Return: 1

@@ -28,7 +28,6 @@ class ImgAIApp {
         // Settings
         this.strengthSlider = document.getElementById('strength');
         this.strengthValue = document.getElementById('strength-value');
-        this.promptInput = document.getElementById('prompt');
 
         // Results
         this.resultSection = document.querySelector('.result-section');
@@ -164,7 +163,7 @@ class ImgAIApp {
 
         const style = document.querySelector('input[name="style"]:checked').value;
         const strength = this.strengthSlider.value;
-        const prompt = this.promptInput.value;
+        const prompt = '';  // Using style default prompts
 
         this.showLoading(true);
         this.updateProgress(0);

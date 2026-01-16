@@ -1,0 +1,35 @@
+Command: py -3.11 "D:\xamp\htdocs\img_ai\php/../python/generate.py" --input "D:\xamp\htdocs\img_ai\php/../uploads/img_20260116_141309_696a3965ef21f.JPG" --output "D:\xamp\htdocs\img_ai\php/../outputs/gen_img_20260116_141309_696a3965ef21f_anime.png" --style "anime" --strength 0.570000 --prompt "anime style, anime artwork, vibrant colors, detailed anime illustration, high quality anime art" 2>&1
+Output: PROGRESS:5
+STATUS:Initializing...
+PROGRESS:10
+STATUS:Loading AI libraries...
+C:\Users\bjzaa\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\amp\autocast_mode.py:265: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+  warnings.warn(
+PROGRESS:15
+STATUS:Setting up GPU...
+GPU: privateuseone:0
+PROGRESS:20
+STATUS:Loading AI model...
+PROGRESS:25
+STATUS:Loading: Ojimi/anime-kawai-diffusion
+C:\Users\bjzaa\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py:143: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\bjzaa\.cache\huggingface\hub\models--Ojimi--anime-kawai-diffusion. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+Fetching 14 files:   7%|7         | 1/14 [00:07<01:43,  7.94s/it]'(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: aca493d4-02b8-4b3c-b5f9-64129fbd168a)')' thrown while requesting HEAD https://huggingface.co/Ojimi/anime-kawai-diffusion/resolve/2ed4e298263fa0cae5c0778e6aac303ad907503f/scheduler/scheduler_config.json
+Retrying in 1s [Retry 1/5].
+'(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: a4461e9b-c698-4412-96dd-7e41181c3667)')' thrown while requesting HEAD https://huggingface.co/Ojimi/anime-kawai-diffusion/resolve/2ed4e298263fa0cae5c0778e6aac303ad907503f/tokenizer/tokenizer_config.json
+Retrying in 1s [Retry 1/5].
+'(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 20da6d87-0bb5-44ca-980d-9a8d46071af0)')' thrown while requesting HEAD https://huggingface.co/Ojimi/anime-kawai-diffusion/resolve/2ed4e298263fa0cae5c0778e6aac303ad907503f/unet/diffusion_pytorch_model.safetensors
+Retrying in 1s [Retry 1/5].
+Fetching 14 files:  29%|##8       | 4/14 [00:13<00:31,  3.12s/it]Fetching 14 files:  43%|####2     | 6/14 [00:20<00:26,  3.28s/it]'(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: fdbcef47-3887-4493-ab95-68851c0da77a)')' thrown while requesting HEAD https://huggingface.co/Ojimi/anime-kawai-diffusion/resolve/2ed4e298263fa0cae5c0778e6aac303ad907503f/unet/diffusion_pytorch_model.safetensors
+Retrying in 2s [Retry 2/5].
+Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+Fetching 14 files:  86%|########5 | 12/14 [02:46<00:33, 16.91s/it]Fetching 14 files: 100%|##########| 14/14 [02:46<00:00, 11.87s/it]
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...:  40%|####      | 2/5 [00:00<00:00, 18.48it/s]`torch_dtype` is deprecated! Use `dtype` instead!
+Loading pipeline components...:  80%|########  | 4/5 [00:00<00:00, 15.46it/s]Loading pipeline components...: 100%|##########| 5/5 [00:00<00:00, 15.99it/s]
+ERROR: Model loading failed: `final_sigmas_type` zero is not supported for `algorithm_type` deis. Please choose `sigma_min` instead.
+
+Error: 
+Return: 1

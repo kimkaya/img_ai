@@ -1,0 +1,21 @@
+Command: py -3.11 "D:\xamp\htdocs\img_ai\php/../python/generate.py" --input "D:\xamp\htdocs\img_ai\php/../uploads/img_20260115_122319_6968ce27de1e2.JPG" --output "D:\xamp\htdocs\img_ai\php/../outputs/gen_img_20260115_122319_6968ce27de1e2_anime.png" --style "anime" --strength 0.750000 --prompt "anime style, anime artwork, vibrant colors, detailed anime illustration, high quality anime art" 2>&1
+Output: PROGRESS:5
+STATUS:Initializing...
+PROGRESS:10
+STATUS:Loading libraries...
+C:\Users\bjzaa\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\amp\autocast_mode.py:265: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+  warnings.warn(
+PROGRESS:15
+STATUS:Setting up DirectML...
+Using DirectML device: privateuseone:0
+PROGRESS:20
+STATUS:Loading model...
+PROGRESS:25
+STATUS:Downloading model: Linaqruf/anything-v3.0
+ERROR: Failed to load model: 401 Client Error. (Request ID: Root=1-6968ce2c-17c08eab1caa6dae26b968d9;3a0aa45b-27da-49ee-b144-80d74fa53cbb)
+
+Cannot access gated repo for url https://huggingface.co/Linaqruf/anything-v3.0/resolve/main/model_index.json.
+Access to model Linaqruf/anything-v3.0 is restricted. You must have access to it and be authenticated to access it. Please log in.
+
+Error: 
+Return: 1

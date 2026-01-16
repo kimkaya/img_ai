@@ -1,0 +1,97 @@
+Command: python "D:\xamp\htdocs\img_ai\php/../python/generate.py" --input "D:\xamp\htdocs\img_ai\php/../uploads/img_20260115_115650_6968c7f251b45.JPG" --output "D:\xamp\htdocs\img_ai\php/../outputs/gen_img_20260115_115650_6968c7f251b45_anime.png" --style "anime" --strength 0.750000 --prompt "anime style, anime artwork, vibrant colors, detailed anime illustration, high quality anime art" 2>&1
+Output: PROGRESS:5
+STATUS:초기화 중...
+PROGRESS:10
+STATUS:라이브러리 로딩...
+WARNING[XFORMERS]: xFormers can't load C++/CUDA extensions. xFormers was built for:
+    PyTorch 2.9.1+cu128 with CUDA 1208 (you have 2.9.1+cpu)
+    Python  3.10.11 (you have 3.14.2)
+  Please reinstall xformers (see https://github.com/facebookresearch/xformers#installing-xformers)
+  Memory-efficient attention, SwiGLU, sparse and more won't be available.
+  Set XFORMERS_MORE_DETAILS=1 for more details
+Traceback (most recent call last):
+  File "C:\Users\bjzaa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\diffusers\utils\import_utils.py", line 1016, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bjzaa\AppData\Local\Python\pythoncore-3.14-64\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1398, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "C:\Users\bjzaa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\diffusers\loaders\ip_adapter.py", line 40, in <module>
+    from ..models.attention_processor import (
+    ...<7 lines>...
+    )
+  File "C:\Users\bjzaa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\diffusers\models\attention_processor.py", line 35, in <module>
+    import xformers.ops
+  File "C:\Users\bjzaa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\xformers\ops\__init__.py", line 9, in <module>
+    from .fmha import (
+    ...<13 lines>...
+    )
+  File "C:\Users\bjzaa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\xformers\ops\fmha\__init__.py", line 10, in <module>
+    from . import (
+    ...<8 lines>...
+    )
+  File "C:\Users\bjzaa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\xformers\ops\fmha\flash3.py", line 110, in <module>
+    from ...flash_attn_3 import _C  # type: ignore[attr-defined]  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ImportError: DLL load failed while importing _C: 지정된 모듈을 찾을 수 없습니다.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\bjzaa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\diffusers\utils\import_utils.py", line 1016, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bjzaa\AppData\Local\Python\pythoncore-3.14-64\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1398, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "C:\Users\bjzaa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\diffusers\pipelines\stable_diffusion\pipeline_stable_diffusion_img2img.py", line 27, in <module>
+    from ...loaders import FromSingleFileMixin, IPAdapterMixin, StableDiffusionLoraLoaderMixin, TextualInversionLoaderMixin
+  File "<frozen importlib._bootstrap>", line 1423, in _handle_fromlist
+  File "C:\Users\bjzaa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\diffusers\utils\import_utils.py", line 1006, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+  File "C:\Users\bjzaa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\diffusers\utils\import_utils.py", line 1018, in _get_module
+    raise RuntimeError(
+    ...<2 lines>...
+    ) from e
+RuntimeError: Failed to import diffusers.loaders.ip_adapter because of the following error (look up to see its traceback):
+DLL load failed while importing _C: 지정된 모듈을 찾을 수 없습니다.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\xamp\htdocs\img_ai\php/../python/generate.py", line 230, in <module>
+    main()
+    ~~~~^^
+  File "D:\xamp\htdocs\img_ai\php/../python/generate.py", line 42, in main
+    from diffusers import (
+    ...<4 lines>...
+    )
+  File "<frozen importlib._bootstrap>", line 1423, in _handle_fromlist
+  File "C:\Users\bjzaa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\diffusers\utils\import_utils.py", line 1007, in __getattr__
+    value = getattr(module, name)
+  File "C:\Users\bjzaa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\diffusers\utils\import_utils.py", line 1007, in __getattr__
+    value = getattr(module, name)
+  File "C:\Users\bjzaa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\diffusers\utils\import_utils.py", line 1006, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+  File "C:\Users\bjzaa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\diffusers\utils\import_utils.py", line 1018, in _get_module
+    raise RuntimeError(
+    ...<2 lines>...
+    ) from e
+RuntimeError: Failed to import diffusers.pipelines.stable_diffusion.pipeline_stable_diffusion_img2img because of the following error (look up to see its traceback):
+Failed to import diffusers.loaders.ip_adapter because of the following error (look up to see its traceback):
+DLL load failed while importing _C: 지정된 모듈을 찾을 수 없습니다.
+
+Error: 
+Return: 1

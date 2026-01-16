@@ -1,4 +1,7 @@
 <?php
+set_time_limit(600); // 10분 실행 제한
+ini_set('max_execution_time', 600);
+
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
@@ -59,8 +62,8 @@ try {
     // Python 스크립트 실행
     $pythonScript = $pythonDir . 'generate.py';
 
-    // Windows에서 Python 경로
-    $pythonPath = 'python'; // 또는 전체 경로
+    // Windows에서 Python 3.11 경로
+    $pythonPath = 'py -3.11'; // Python 3.11 사용
 
     $command = sprintf(
         '%s "%s" --input "%s" --output "%s" --style "%s" --strength %f --prompt "%s" 2>&1',
@@ -90,7 +93,7 @@ try {
         $output = '';
         $error = '';
         $startTime = time();
-        $timeout = 300; // 5분 타임아웃
+        $timeout = 600; // 10분 타임아웃 (첫 모델 다운로드 시 필요)
 
         while (true) {
             $status = proc_get_status($process);
